@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 常用JS组件
 
 前端开发的一些常用JS组件（包含AC的移动端适用的开源JS组件），每个文件夹包含一个单独示例，可以在[AppLoader](http://docs.apicloud.com/APICloud/download)中单独运行。
@@ -78,7 +77,3 @@
     <td>将markdown转换为HTML代码，包含markdown的样式文件</td>
 </tr>
 </table>
-=======
-# Mr.X
-常用的移动端和前端的资源
->>>>>>> 270cec74f1e43502bd5d784df96b0066a202e2ef
