@@ -1,29 +1,86 @@
-<DOCTYPE html>
-    <html>
+<!doctype html>
+<html>
 
-    <head>
-        <title>合适的markdown编辑器样式</title>
-        <link rel="stylesheet" href="css/index.css">
-    </head>
+<head>
+    <title>合适的markdown编辑器样式</title>
+    <link rel="stylesheet" href="styles/solarized-light.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
 
-    <body>
-        <textarea id="text-input" oninput="this.editor.update()" rows="6" cols="60">Type **Markdown** here.</textarea>
-        <div id="preview"> </div>
-        <script src="js/jquery.min.js"></script>
-		 <script src="js/markdown.min.js"></script>
-        <script>
-        function Editor(input, preview) {
-            this.update = function() {
-                preview.innerHTML = markdown.toHTML(input.value);
-            };
-            input.editor = this;
-            this.update();
-        }
-        var $ = function(id) {
-            return document.getElementById(id);
+<body>
+<textarea id="text-input" oninput="this.editor.update()" rows="6" cols="60">Type **Markdown** here.</textarea>
+
+<div id="preview">
+
+</div>
+<div id="content">
+        <pre>
+    <code>
+            function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = markdown.toHTML(input.value);
         };
-        new Editor($("text-input"), $("preview"));
-        </script>
-    </body>
+        input.editor = this;
+        this.update();
+        $("pre code").each(function (i, block) {
+            console.log("已经渲染第" + i + "个");
+            hljs.highlightBlock(block);
+        });
+    }
+    </code>
+        <code>
+            function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+        $("pre code").each(function (i, block) {
+            console.log("已经渲染第" + i + "个");
+            hljs.highlightBlock(block);
+        });
+    }
+    </code>
+        <code>
+            function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+        $("pre code").each(function (i, block) {
+            console.log("已经渲染第" + i + "个");
+            hljs.highlightBlock(block);
+        });
+    }
+    </code>
+  </pre>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="js/markdown.min.js"></script>
+<script>
+    var $a = function (id) {
+        return document.getElementById(id);
+    };
+    $(document).ready(function () {
+        new Editor($a("text-input"), $a("preview"));
+    });
+    function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+        $("pre code").each(function (i, block) {
+            console.log("已经渲染第" + i + "个");
+            hljs.highlightBlock(block);
+        });
 
-    </html>
+    }
+
+</script>
+</body>
+
+</html>
